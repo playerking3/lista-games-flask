@@ -20,18 +20,18 @@
         }
 
         .titulo {
-            flex-basis: 40%; /* Defina a largura da coluna do título */
-            text-align: left; /* Alinhe o texto à esquerda */
+            flex-basis: 40%;
+            text-align: left;
         }
 
         .autor {
-            flex-basis: 40%; /* Defina a largura da coluna do autor */
-            text-align: left; /* Alinhe o texto à esquerda */
+            flex-basis: 40%;
+            text-align: left;
         }
 
         .ano_publicacao {
-            flex-basis: 10%; /* Defina a largura da coluna de ano_publicacao */
-            text-align: right; /* Alinhe o texto à esquerda */
+            flex-basis: 10%;
+            text-align: right;
         }
     </style>
 </head>
@@ -42,12 +42,18 @@
             <span class="titulo">Título</span>
             <span class="autor">Autor</span>
             <span class="ano_publicacao">Ano de Publicação</span>
+            <span class="editar"></span>
+            <span class="deletar"></span>
         </li>
+        <!-- Aqui começa a parte dinâmica -->
         {% for livro in outro %}
             <li>
                 <span class="titulo">{{ livro['titulo'] }}</span>
                 <span class="autor">{{ livro['autor'] }}</span>
                 <span class="ano_publicacao">{{ livro['ano_publicacao'] }}</span>
+                <span class="editar"><a href="{{ url_for('editar', id=livro.id_livro)}}">Editar</a></span>
+                <span>&nbsp;</span>
+                <span class="deletar"><a href="{{ url_for('deletar', id=livro.id_livro)}}">Excluir</a></span>
             </li>
         {% endfor %}
     </ul>
