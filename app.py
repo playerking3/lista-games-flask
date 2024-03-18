@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, flash, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'ZGBKJHFGNKFLGERHN'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/livro'
 db = SQLAlchemy(app)
 
