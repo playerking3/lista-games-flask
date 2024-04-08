@@ -20,8 +20,9 @@
     <div class="page-header">
       <h1>{{titulo}}</h1>
     </div>
-    <form action="{{ url_for('criar') }}" method="post">
+    <form action="{{ url_for('criar') }}" method="post" enctype="multipart/form-data">
       <fieldset>
+        <input type="file" name="arquivo" accept="jpg">
         <div class="form-group">
           <label for="titulo">Título</label>
           <input type="text" id="titulo" name="titulo" class="form-control">
